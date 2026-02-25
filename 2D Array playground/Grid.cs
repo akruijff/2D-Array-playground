@@ -2,7 +2,7 @@
 {
     internal class Grid<T>
     {
-        private int width, height;
+        private readonly int width, height;
         private T[,] data;
 
         public Grid(int width, int height)
