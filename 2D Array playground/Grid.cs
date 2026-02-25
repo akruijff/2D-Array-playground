@@ -1,15 +1,9 @@
 ﻿namespace _2D_Array_playground
 {
-    internal class Grid<T>
+    internal class Grid<T>(int width, int height)
     {
-        private readonly int width, height;
-        private T[,] data;
-
-        public Grid(int width, int height)
-        {
-            this.width = width, this.height = height;
-            data = new T[width, height];
-        }
+        private readonly int width = width, height = height;
+        private T[,] data = new T[width, height];
 
         public void Initialize(Fetcher<T> fetcher)
         {
