@@ -23,7 +23,7 @@
                 int value = grid.Get(x, y);
                 Console.ForegroundColor = formatter.BoarderForegrondColor();
                 Console.BackgroundColor = formatter.BoarderBackgrondColor();
-                Console.Write("|");
+                Console.Write(formatter.VerticalChar());
                 Console.ForegroundColor = formatter.ContentForegroundColor(x, y);
                 Console.BackgroundColor = formatter.ContentBackgrondColor(x, y);
                 WritePadding(DeterminePadding(value));
@@ -31,13 +31,13 @@
             }
             Console.ForegroundColor = formatter.BoarderForegrondColor();
             Console.BackgroundColor = formatter.BoarderBackgrondColor();
-            Console.WriteLine("|");
+            Console.WriteLine(formatter.VerticalChar());
         }
 
-        private static void WritePadding(int n)
+        private void WritePadding(int n)
         {
             for (int i = 0; i < n; ++i)
-                Console.Write(" ");
+                Console.Write(formatter.BlankChar());
         }
 
         private int DeterminePadding(int value)
@@ -57,11 +57,11 @@
             Console.BackgroundColor = formatter.BoarderBackgrondColor();
             for (int x = 0; x < grid.Width; ++x)
             {
-                Console.Write("+");
+                Console.Write(formatter.IntersectionChar());
                 for (int i = 0; i < cellWidth; ++i)
-                    Console.Write('-');
+                    Console.Write(formatter.HorizontalChar());
             }
-            Console.WriteLine("+");
+            Console.WriteLine(formatter.IntersectionChar());
         }
     }
 }
