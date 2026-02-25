@@ -11,7 +11,9 @@
             Grid<int> grid = new(width, height);
             grid.Initialize(new RandomIntGenerator(1, 99));
 
-            new BasicGridConsole(grid, 3).Write();
+            Options options = new Options("");
+            options.Add("Basic", () => { new BasicGridConsole(grid, 3).Write(); });
+            options.Execute();            
         }
 
         private static int GetValue(String msg)
