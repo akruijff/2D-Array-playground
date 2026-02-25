@@ -21,15 +21,14 @@
             {
                 int value = grid.Get(x, y);
                 Console.Write("|");
-                WritePAdding(value);
+                WritePadding(DeterminePadding(value));
                 Console.Write(value);
             }
             Console.WriteLine("|");
         }
 
-        private void WritePAdding(int value)
+        private static void WritePadding(int n)
         {
-            int n = DeterminePadding(value);
             for (int i = 0; i < n; ++i)
                 Console.Write(" ");
         }
