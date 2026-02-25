@@ -5,9 +5,11 @@
         private int index = 0;
         private ConsoleColor[] colors = colors;
 
-        public ConsoleColor BoarderColor() => Formatter.DEFAULT.BoarderColor();
+        public ConsoleColor BoarderBackgrondColor() => Formatter.DEFAULT.BoarderBackgrondColor();
+        public ConsoleColor BoarderForegrondColor() => Formatter.DEFAULT.BoarderForegrondColor();
+        public ConsoleColor ContentBackgrondColor(int x, int y) => Formatter.DEFAULT.ContentBackgrondColor(x, y);
 
-        public ConsoleColor ContentColor()
+        public ConsoleColor ContentForegroundColor(int x, int y)
         {
             ConsoleColor cc = colors[index];
             if (++index == colors.Length)

@@ -2,7 +2,9 @@
 {
     internal class DefaultFormatter : Formatter
     {
-        public ConsoleColor BoarderColor() => ConsoleColor.White;
-        public ConsoleColor ContentColor() => ConsoleColor.White;
+        public ConsoleColor BoarderBackgrondColor() => ConsoleColor.Black;
+        public ConsoleColor BoarderForegrondColor() => ConsoleColor.White;
+        public ConsoleColor ContentBackgrondColor(int x, int y) => ConsoleColor.Black;
+        public ConsoleColor ContentForegroundColor(int x, int y) => ConsoleColor.White;
     }
 }

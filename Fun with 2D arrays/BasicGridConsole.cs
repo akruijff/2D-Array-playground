@@ -21,12 +21,16 @@
             for (int x = 0; x < grid.Width; ++x)
             {
                 int value = grid.Get(x, y);
+                Console.ForegroundColor = formatter.BoarderForegrondColor();
+                Console.BackgroundColor = formatter.BoarderBackgrondColor();
                 Console.Write("|");
+                Console.ForegroundColor = formatter.ContentForegroundColor(x, y);
+                Console.BackgroundColor = formatter.ContentBackgrondColor(x, y);
                 WritePadding(DeterminePadding(value));
-                Console.ForegroundColor = formatter.ContentColor();
                 Console.Write(value);
             }
-            Console.ForegroundColor = formatter.BoarderColor();
+            Console.ForegroundColor = formatter.BoarderForegrondColor();
+            Console.BackgroundColor = formatter.BoarderBackgrondColor();
             Console.WriteLine("|");
         }
 
@@ -49,7 +53,8 @@
 
         private void WriteBorder()
         {
-            Console.ForegroundColor = formatter.BoarderColor();
+            Console.ForegroundColor = formatter.BoarderForegrondColor();
+            Console.BackgroundColor = formatter.BoarderBackgrondColor();
             for (int x = 0; x < grid.Width; ++x)
             {
                 Console.Write("+");

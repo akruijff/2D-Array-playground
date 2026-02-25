@@ -4,7 +4,9 @@
     {
         public static Formatter DEFAULT { get;  } = new DefaultFormatter();
 
-        ConsoleColor BoarderColor();
-        ConsoleColor ContentColor();
+        ConsoleColor BoarderBackgrondColor();
+        ConsoleColor BoarderForegrondColor();
+        ConsoleColor ContentBackgrondColor(int x, int y);
+        ConsoleColor ContentForegroundColor(int x, int y);
     }
 }
