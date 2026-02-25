@@ -4,7 +4,27 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Fun with 2D arrays");
+            int width = GetValue("Width:");
+            int height = GetValue("Height:");
+        }
+
+        private static int GetValue(String msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Write(msg + " ");
+                    int value = Convert.ToInt32(Console.ReadLine());
+                    if (value > 0)
+                        return value;
+                }
+                catch
+                {
+                    Console.WriteLine("Please pick an integer greater than 0!");
+                }
+            }
         }
     }
 }
