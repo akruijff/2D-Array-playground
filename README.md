@@ -1,1 +1,1 @@
-# 2D Array playground
+# Fun with 2D arrays

@@ -1,4 +1,4 @@
-﻿namespace _2D_Array_playground
+﻿namespace Fun_with_2D_arrays
 {
     internal class Grid<T>(int width, int height)
     {
