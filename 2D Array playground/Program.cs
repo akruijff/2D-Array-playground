@@ -7,6 +7,9 @@
             Console.WriteLine("Fun with 2D arrays");
             int width = GetValue("Width:");
             int height = GetValue("Height:");
+
+            Grid<int> grid = new(width, height);
+            grid.Initialize(new RandomIntGenerator(1, 99));
         }
 
         private static int GetValue(String msg)
