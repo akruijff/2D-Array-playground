@@ -7,7 +7,6 @@
         private readonly List<int> list = [0];
         private readonly Dictionary<int, (string, Action)> map = new() { { OPTION_ABORT, ("Abort", () => { }) } };
 
-
         public void Add(string msg, Action action)
         {
             int option = ++count;
@@ -57,6 +56,7 @@
 
         private void Invoke(int option)
         {
+            Console.WriteLine();
             (string msg, Action action) = map[option];
             action.Invoke();            
         }

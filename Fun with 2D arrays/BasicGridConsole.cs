@@ -1,9 +1,10 @@
 ﻿namespace Fun_with_2D_arrays
 {
-    internal class BasicGridConsole(Grid<int> grid, int cellWidth)
+    internal class BasicGridConsole(Grid<int> grid, int cellWidth, Formatter? formatter = null)
     {
         private int cellWidth = cellWidth;
         private Grid<int> grid = grid;
+        private Formatter formatter = formatter ?? new DefaultFormatter();
 
         internal void Write()
         {
@@ -22,8 +23,10 @@
                 int value = grid.Get(x, y);
                 Console.Write("|");
                 WritePadding(DeterminePadding(value));
+                Console.ForegroundColor = formatter.ContentColor();
                 Console.Write(value);
             }
+            Console.ForegroundColor = formatter.BoarderColor();
             Console.WriteLine("|");
         }
 
@@ -46,6 +49,7 @@
 
         private void WriteBorder()
         {
+            Console.ForegroundColor = formatter.BoarderColor();
             for (int x = 0; x < grid.Width; ++x)
             {
                 Console.Write("+");
