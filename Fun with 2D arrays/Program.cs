@@ -12,17 +12,17 @@
             grid.Initialize(new RandomIntGenerator(1, 99));
 
             Options options = new Options("");
-            options.Add("Basic", () => { new BasicGridConsole(grid, 3).Write(); });
+            options.Add("Basic", () => { new GridConsole(grid, 3).Write(); });
             options.Add("Fun House", () =>
             {
                 var f = new FunHouseFormatter(ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Yellow);
-                var gc = new BasicGridConsole(grid, 3, f);
+                var gc = new GridConsole(grid, 3, f);
                 gc.Write();
             });
             options.Add("Chess", () =>
             {
                 var f = new ChesFormatter();
-                var gc = new BasicGridConsole(grid, 3, f);
+                var gc = new GridConsole(grid, 3, f);
                 gc.Write();
             });
             options.Execute();            

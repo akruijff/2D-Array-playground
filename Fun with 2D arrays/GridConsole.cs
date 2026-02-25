@@ -1,6 +1,6 @@
 ﻿namespace Fun_with_2D_arrays
 {
-    internal class BasicGridConsole(Grid<int> grid, int cellWidth, Formatter? formatter = null)
+    internal class GridConsole(Grid<int> grid, int cellWidth, Formatter? formatter = null)
     {
         private int cellWidth = cellWidth;
         private Grid<int> grid = grid;
