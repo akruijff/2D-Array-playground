@@ -10,6 +10,8 @@
 
             Grid<int> grid = new(width, height);
             grid.Initialize(new RandomIntGenerator(1, 99));
+
+            new BasicGridConsole(grid, 3).Write();
         }
 
         private static int GetValue(String msg)

@@ -2,13 +2,14 @@
 {
     internal class Grid<T>(int width, int height)
     {
-        private readonly int width = width, height = height;
+        public int Width { get; init; } = width;
+        public int Height { get; init; } = height;
         private T[,] data = new T[width, height];
 
         public void Initialize(Fetcher<T> fetcher)
         {
-            for (int y = 0; y < height; ++y)
-                for (int x = 0; x < width; ++x)
+            for (int y = 0; y < Height; ++y)
+                for (int x = 0; x < Width; ++x)
                     data[x, y] = fetcher.Fetch(x, y);
         }
 
